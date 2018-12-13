@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<style>
+    #dragdroparea {
+        border:2px dotted #0B85A1;
+        width:500px;
+        height: 100px;
+        color:#92AAB0;
+        text-align:left;vertical-align:middle;
+        padding:10px 10px 10 10px;
+        margin-bottom:10px;
+        font-size:200%;
+    }
+</style>
+</head>
+<body>
+    <!-- <form method="post" enctype="multipart/form-data" th:action="@{/upload}">
+        <input name="fileData" type="file" />
+        <input type="submit" />
+        
+    </form> -->
+<form action="@{/upload}" method="post" enctype="multipart/form-data">
+  <div id="drag-drop-area">
+    <div class="drag-drop-inside">
+      <p class="drag-drop-info">ここにファイルをドロップ</p>
+      <p>または</p>
+      <input type="file" value="ファイルを選択" name="image">
+      <p class="drag-drop-buttons"><input id="fileInput" type="file" value="ファイルを選択" name="image"></p>
+      <input type="submit" value="送信">
+    </div>
+  </div>
+</form>
+<script src="/js/file4.js" th:src="@{/js/file4.js}"></script>
+</body>
+</html>

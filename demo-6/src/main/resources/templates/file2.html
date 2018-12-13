@@ -1,0 +1,41 @@
+<html lang="ja">
+<body>
+
+<table>
+  <thead>
+    <tr>
+    <th style="width:120px;">ファイル</th>
+    <td id="file_drop_zone" colspan="2" style="width:500px;">
+  ここにファイルをドラッグ&ドロップして下さい
+    </td>
+    </tr>
+  </thead>
+  <tbody id="file_dropped_zone">
+  </tbody>
+  <tfoot>
+    <tr>
+    <td></td>
+    <td colspan="2">
+      <button type="button"
+          onClick="doc_list.submit_docs()">登録実行</button></td>
+    </tr>
+  </tfoot>
+</table>
+
+<script id="tmpl_droped_file" type="text/x-jquery-tmpl">
+<tr>
+  <td><input type="hidden" class="fileContent" name="fileContent"></td>
+  <td class="fileName"></td>
+  <td class="fileSize"></td>
+</tr>
+</script>
+
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script src="/jquery/jquery.tmpl.js"></script>
+<script src="/jquery/jquery.json.js"></script>
+<script src="/js/DocList.js"></script>
+<script>
+  $(document).ready(function(){  doc_list.init_page(); });
+</script>
+</body>
+</html>
